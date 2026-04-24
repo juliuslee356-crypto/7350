@@ -1,0 +1,242 @@
+/* ——————————————————————————————————————————
+   AIGC 新闻网站 全局统一样式
+   所有页面 100% 复用，保证风格一致
+—————————————————————————————————————————— */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --news-dark: #111827;
+  --news-blue: #1d4ed8;
+  --news-light-blue: #3b82f6;
+  --news-gray: #f3f4f6;
+  --news-white: #ffffff;
+  --news-text: #1f2937;
+  --news-muted: #6b7280;
+  --shadow-light: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-medium: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-heavy: 0 10px 25px rgba(0,0,0,0.15);
+  --radius: 16px;
+  --radius-small: 8px;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f9fafb;
+  color: var(--news-text);
+  line-height: 1.7;
+}
+
+/* 容器：全局居中、最大宽度、自动边距 —— 核心！不再居左 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* —— 顶部导航 —— */
+.navbar {
+  background-color: var(--news-dark);
+  color: white;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: var(--shadow-medium);
+}
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.nav-links a:hover {
+  color: var(--news-light-blue);
+}
+
+/* —— 超大横幅 居中视觉 —— */
+.hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%);
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+  border-radius: 0 0 0 0;
+}
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.hero p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto 32px;
+  opacity: 0.92;
+}
+.hero-btn {
+  background: white;
+  color: var(--news-blue);
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
+}
+.hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-heavy);
+}
+
+/* —— 页面标题 居中卡片 —— */
+.page-header {
+  text-align: center;
+  margin: 60px 0 40px;
+}
+.page-header h2 {
+  font-size: 34px;
+  color: var(--news-dark);
+  margin-bottom: 12px;
+}
+.page-header p {
+  color: var(--news-muted);
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+/* —— 主内容卡片布局（多层次核心） —— */
+.grid-section {
+  margin: 40px 0;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* —— 高级卡片 —— */
+.card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow-medium);
+  transition: 0.35s ease;
+  border: 1px solid #e5e7eb;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-heavy);
+  border-color: var(--news-light-blue);
+}
+.card h3 {
+  font-size: 20px;
+  color: var(--news-dark);
+  margin-bottom: 12px;
+}
+.card p {
+  color: var(--news-muted);
+  margin-bottom: 20px;
+}
+.card-link {
+  color: var(--news-blue);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* —— 板块大卡片（每个成员负责一个） —— */
+.section-block {
+  background: white;
+  border-radius: var(--radius);
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-medium);
+  border-left: 6px solid var(--news-blue);
+}
+.section-block h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: var(--news-dark);
+}
+.section-block p {
+  font-size: 16px;
+  color: var(--news-muted);
+  margin-bottom: 28px;
+}
+
+/* —— 内容居中排版 —— */
+.content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.content-title {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 24px;
+  color: var(--news-dark);
+}
+.content-text {
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #374151;
+}
+
+/* —— 页脚 —— */
+.footer {
+  background-color: var(--news-dark);
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+  margin-top: 60px;
+}
+.footer p {
+  opacity: 0.8;
+}
+
+/* —— 响应式 —— */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero h1 {
+    font-size: 34px;
+  }
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .nav-links {
+    gap: 16px;
+  }
+}
+/* 解决点击导航栏跳转后，标题被固定导航栏遮挡的问题 */
+section[id] {
+  scroll-margin-top: 100px; 
+}
+
+/* 增加平滑滚动效果，让跳转像滑过去一样 */
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Future Trends &amp; Resources – AIGC Journalism</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', 'Segoe UI', sans-serif; background: #f5f6fa; color: #1a1a2e; font-size: 16px; line-height: 1.7; }
+    nav { background: #0f1535; display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; height: 56px; position: sticky; top: 0; z-index: 100; }
+    .nav-brand { color: #ffffff; font-weight: 700; font-size: 1.05rem; text-decoration: none; }
+    .nav-links { display: flex; gap: 0; }
+    .nav-links a { color: #c8cfe8; text-decoration: none; font-size: 0.9rem; font-weight: 400; padding: 0.5rem 1.1rem; border-radius: 4px; transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: #ffffff; background: rgba(255,255,255,0.08); }
+    .nav-links a.active { color: #ffffff; font-weight: 600; }
+    .hero { background: linear-gradient(135deg, #0f1535 0%, #1a237e 45%, #3b4fd8 100%); padding: 5rem 2rem 4rem; text-align: center; color: #ffffff; }
+    .hero-sub { display: inline-block; color: #a8b4f0; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.2rem; }
+    .hero h1 { font-size: clamp(1.9rem, 5vw, 3rem); font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+    .hero p { color: #c8cfe8; font-size: 1rem; font-weight: 300; max-width: 560px; margin: 0 auto; }
+    .content { max-width: 860px; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
+    .section-block { background: #ffffff; border-radius: 8px; border-left: 4px solid #3b4fd8; padding: 1.8rem 2rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .section-label { color: #3b4fd8; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; margin-bottom: 0.4rem; display: block; }
+    h2 { font-size: 1.25rem; font-weight: 700; color: #0f1535; margin-bottom: 0.8rem; line-height: 1.3; }
+    p { color: #3d4466; font-size: 0.97rem; margin-bottom: 0.8rem; }
+    p:last-child { margin-bottom: 0; }
+    /* Trend cards */
+    .trend-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 0.8rem; }
+    @media(max-width:600px){ .trend-grid{ grid-template-columns:1fr; } }
+    .trend-card { background: #f0f3ff; border: 1px solid #dde3ff; border-top: 3px solid #3b4fd8; border-radius: 0 0 8px 8px; padding: 1.2rem 1rem; text-align: center; }
+    .trend-card .icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
+    .trend-card h4 { color: #3b4fd8; font-size: 0.88rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .trend-card p { font-size: 0.84rem; color: #5a6080; margin: 0; }
+    /* Plain list */
+    .plain-list { list-style: none; padding: 0; margin: 0.8rem 0 0; }
+    .plain-list li { padding: 0.75rem 1rem; border-left: 3px solid #3b4fd8; background: #f0f3ff; border-radius: 0 6px 6px 0; margin-bottom: 0.6rem; font-size: 0.93rem; color: #3d4466; }
+    .plain-list li strong { display: block; color: #0f1535; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.2rem; }
+    /* Rec grid */
+    .rec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.8rem; }
+    @media(max-width:560px){ .rec-grid{ grid-template-columns:1fr; } }
+    .rec-card { background: #fff8ed; border: 1px solid #fde8bb; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0; padding: 1rem 1.2rem; }
+    .rec-card h4 { color: #b45309; font-size: 0.88rem; font-weight: 700; margin-bottom: 0.35rem; }
+    .rec-card p { font-size: 0.86rem; color: #78580a; margin: 0; }
+    /* Resource sections */
+    .resource-section { margin-top: 1.5rem; }
+    .resource-section h3 { color: #0f1535; font-size: 0.9rem; font-weight: 700; border-bottom: 2px solid #3b4fd8; padding-bottom: 0.35rem; margin-bottom: 0.9rem; display: inline-block; }
+    .resource-list { list-style: none; padding: 0; }
+    .resource-list li { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 0.6rem; font-size: 0.9rem; }
+    .resource-list li::before { content: "→"; color: #3b4fd8; font-weight: 700; flex-shrink: 0; }
+    .resource-list a { color: #3b4fd8; text-decoration: none; border-bottom: 1px dotted #aab4e8; transition: color 0.2s; }
+    .resource-list a:hover { color: #1a237e; }
+    .resource-list .desc { color: #8a94b8; font-size: 0.82rem; font-style: italic; }
+    /* Summary */
+    .summary { background: linear-gradient(135deg, #f0f3ff, #e8ecff); border-left: 4px solid #3b4fd8; border-radius: 0 8px 8px 0; padding: 1.2rem 1.6rem; font-style: italic; color: #1a237e; font-size: 0.97rem; margin-top: 0.8rem; }
+    /* References */
+    .references { background: #ffffff; border: 1px solid #e0e4f0; border-radius: 8px; padding: 1.5rem 2rem; margin-top: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    .references h3 { color: #0f1535; font-size: 0.95rem; font-weight: 700; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #3b4fd8; display: inline-block; }
+    .references ol { padding-left: 1.3rem; }
+    .references ol li { font-size: 0.83rem; color: #5a6080; margin-bottom: 0.7rem; line-height: 1.6; }
+    .references ol li a { color: #3b4fd8; word-break: break-all; }
+    footer { background: #0f1535; color: #7a87b8; text-align: center; padding: 1.5rem; font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">AIGC Journalism</a>
+  <div class="nav-links">
+    <a href="index.html">Concept</a>
+    <a href="index.html">Applications</a>
+    <a href="index.html">Ethics</a>
+    <a href="future_trends.html" class="active">Future</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <span class="hero-sub">Part 4 — Research &amp; Future Trends</span>
+  <h1>Future Trends &amp; Resources</h1>
+  <p>Where AI-generated journalism is heading — and what it means for the field</p>
+</div>
+
+<div class="content">
+
+  <div class="section-block">
+    <span class="section-label">01 — Introduction</span>
+    <h2>A Rapidly Evolving Landscape</h2>
+    <p>AIGC in journalism is not a stable phenomenon — it is accelerating. A cross-domain review confirms that AI-generated text, images, and video can now match human-created content in quality, and are being adopted across news, education, and public health sectors (Lim et al., 2025). For journalism, this raises urgent questions about the profession's future, ethical responsibilities, and the need for clear regulation.</p>
+  </div>
+
+  <div class="section-block">
+    <span class="section-label">02 — Future Developments</span>
+    <h2>Emerging Trends in AI Journalism</h2>
+    <div class="trend-grid">
+      <div class="trend-card"><div class="icon">📝</div><h4>Automated News Writing</h4><p>AI will handle more data-driven reporting — finance, sports, weather — freeing journalists for investigative work (Zheng &amp; Liu, 2025).</p></div>
+      <div class="trend-card"><div class="icon">🎥</div><h4>AI Video &amp; Synthetic Anchors</h4><p>Deepfake videos and AI voice clones are deployed without adequate disclosure, risking audience trust erosion (Lim et al., 2025).</p></div>
+      <div class="trend-card"><div class="icon">📱</div><h4>Personalized News Feeds</h4><p>Algorithmic systems amplify AI-generated content regardless of origin, enabling viral reach within hours (Lim et al., 2025).</p></div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <span class="section-label">03 — Impact on Journalists</span>
+    <h2>How Roles Are Changing</h2>
+    <p>As AI handles more first drafts and data analysis, the journalist's role is shifting from <em>content producer</em> to <em>editor, curator, and verifier</em>. Studies of journalists in Denmark found AI is used mainly for routine tasks — transcription and tagging — with reporters redirecting effort toward editorial judgment (Lim et al., 2025). Researchers note that technical adoption often outpaces proper training and ethical preparation (Lim et al., 2025).</p>
+  </div>
+
+  <div class="section-block">
+    <span class="section-label">04 — Risks &amp; Concerns</span>
+    <h2>What Could Go Wrong</h2>
+    <ul class="plain-list">
+      <li><strong>Misinformation at scale</strong> Synthetic news spreads faster than human content due to optimized fluency. AI fake news sites grew over 1,000% in a single year (Li &amp; Yang, 2025).</li>
+      <li><strong>Algorithmic bias in news</strong> All major language models tested produced measurable gender and racial biases. Larger models are more susceptible to acquiring biases from training data (Lim et al., 2024).</li>
+      <li><strong>Over-reliance on automation</strong> Concerns about algorithmic opacity, job losses, and data governance grow as AI takes on greater editorial roles without sufficient human checks (Lim et al., 2025).</li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <span class="section-label">05 — Recommendations ⭐</span>
+    <h2>A Responsible Path Forward</h2>
+    <div class="rec-grid">
+      <div class="rec-card"><h4>Stronger Regulation</h4><p>Governments should develop binding AI transparency standards requiring disclosure when AI is used in content creation (Becker et al., 2025).</p></div>
+      <div class="rec-card"><h4>Improve Media Literacy</h4><p>Public education should help audiences critically evaluate AIGC. Labels can build awareness but need long-term evaluation (Li &amp; Yang, 2025).</p></div>
+      <div class="rec-card"><h4>Maintain Human Involvement</h4><p>Research consistently shows AI tools require a human in the loop to ensure accuracy and uphold editorial integrity (Lim et al., 2025).</p></div>
+      <div class="rec-card"><h4>Invest in AI Training</h4><p>Journalism schools should integrate AI literacy into curricula. Regulatory action alone is insufficient without professional training (Lim et al., 2025).</p></div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <span class="section-label">06 — Further Readings &amp; Resources</span>
+    <h2>Explore the Topic Further</h2>
+    <div class="resource-section">
+      <h3>📄 Academic Sources</h3>
+      <ul class="resource-list">
+        <li><a href="https://www.sciencedirect.com/science/article/pii/S2451958825002453" target="_blank">Lim et al. (2025) — AI &amp; Journalism: Systematic Review</a> <span class="desc">— 72-article bibliometric review, Scopus &amp; Web of Science</span></li>
+        <li><a href="https://doi.org/10.1080/21670811.2024.2431519" target="_blank">Becker et al. (2025) — Policies in Parallel</a> <span class="desc">— AI policy study across 52 global newsrooms</span></li>
+        <li><a href="https://doi.org/10.1177/27523543251317572" target="_blank">Li &amp; Yang (2025) — Nudging Perceived Credibility</a> <span class="desc">— Randomized experiment on AIGC labels and user trust</span></li>
+        <li><a href="https://doi.org/10.58885/ijllis.v9i1.85.lj" target="_blank">Jiang &amp; Zhang (2024) — Ethical Risk of AIGC</a> <span class="desc">— Cross-modal AIGC ethics and regulatory frameworks</span></li>
+        <li><a href="https://doi.org/10.1007/978-981-96-4407-0_12" target="_blank">Zheng &amp; Liu (2025) — AI-Assisted Writing on News Reports</a> <span class="desc">— Comparing AIGC and human-generated journalism content</span></li>
+      </ul>
+    </div>
+    <div class="resource-section">
+      <h3>📰 News Articles</h3>
+      <ul class="resource-list">
+        <li><a href="https://www.bbc.com/news/technology-65041817" target="_blank">BBC — How AI Is Changing Journalism</a> <span class="desc">— Overview of AI adoption across major newsrooms</span></li>
+        <li><a href="https://journalistsresource.org/home/generative-ai-policies-newsrooms/" target="_blank">Journalist's Resource — AI Policies in Newsrooms (2024)</a> <span class="desc">— Summary of AI policy research across 52 organizations</span></li>
+        <li><a href="https://journalistsresource.org/home/ai-ap-bbc/" target="_blank">Journalist's Resource — What Researchers Learned from AP &amp; BBC</a> <span class="desc">— Embedded research on AI use in major newsrooms</span></li>
+      </ul>
+    </div>
+    <div class="resource-section">
+      <h3>📊 Reports &amp; Industry Resources</h3>
+      <ul class="resource-list">
+        <li><a href="https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2024" target="_blank">Reuters Institute Digital News Report 2024</a> <span class="desc">— Annual global survey on news, trust, and AI</span></li>
+        <li><a href="https://cnti.org/reports/newsroom-policies-for-ai-in-journalism-2/" target="_blank">Center for News, Technology &amp; Innovation (2024)</a> <span class="desc">— Overview of global newsroom AI governance</span></li>
+        <li><a href="https://www.niemanlab.org/tag/artificial-intelligence/" target="_blank">Nieman Lab — AI in Journalism</a> <span class="desc">— Ongoing coverage of AI trends in the news industry</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="references">
+    <h3>References (APA 7th Edition)</h3>
+    <ol>
+      <li>Becker, K. B., Simon, F. M., &amp; Crum, C. (2025). Policies in parallel? A comparative study of journalistic AI policies in 52 global news organisations. <em>Digital Journalism, 13</em>(9), 1578–1598. <a href="https://doi.org/10.1080/21670811.2024.2431519" target="_blank">https://doi.org/10.1080/21670811.2024.2431519</a></li>
+      <li>Jiang, L., &amp; Zhang, Y. (2024). Ethical risk and pathway of AIGC cross-modal content generation technology. <em>International Journal of Social Sciences &amp; Humanities, 9</em>(1), 85–99. <a href="https://doi.org/10.58885/ijllis.v9i1.85.lj" target="_blank">https://doi.org/10.58885/ijllis.v9i1.85.lj</a></li>
+      <li>Li, F., &amp; Yang, Y. (2025). Nudging perceived credibility: The impact of AIGC labeling on user distinction of AI-generated content. <em>Journalism &amp; Mass Communication Quarterly.</em> <a href="https://doi.org/10.1177/27523543251317572" target="_blank">https://doi.org/10.1177/27523543251317572</a></li>
+      <li>Lim, W. M., et al. (2025). Artificial intelligence and journalism: A systematic bibliometric and thematic analysis of global research. <em>AI &amp; Society.</em> <a href="https://www.sciencedirect.com/science/article/pii/S2451958825002453" target="_blank">https://doi.org/10.1016/j.asoc.2025.002453</a></li>
+      <li>Zheng, S., &amp; Liu, K. (2025). AI-assisted writing on news report. In T. Hao et al. (Eds.), <em>Lecture Notes in Computer Science</em> (Vol. 15589). Springer. <a href="https://doi.org/10.1007/978-981-96-4407-0_12" target="_blank">https://doi.org/10.1007/978-981-96-4407-0_12</a></li>
+    </ol>
+  </div>
+
+</div>
+
+<footer>AIGC in News &amp; Digital Journalism — Group Project · Part 4: Research &amp; Future Trends</footer>
+</body>
+</html>
